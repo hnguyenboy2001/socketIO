@@ -10,7 +10,10 @@ const io = require("socket.io")(8900,{
 io.on("connection", (socket)=>{
 
     console.log("co nguoi ket noi " + socket.id)
-    // socket.on("helloworldSocketIO",(data)=>{
-    //     console.log(data)
-    // })
+   
+    socket.on("Client-CheckEmit", (data)=>{
+        console.log(data + " from Client")
+        socket.emit("Server-checkEmit", "HelloWorld");
+    })
+
 })

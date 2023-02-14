@@ -1,14 +1,21 @@
 # UseEffect run twice even if an empty array used as an argument  
-    Xóa <React.StrictMode> khỏi index.js Mã này sẽ là
+    
+Remove <React.StrictMode> from index.js This code will be
 
-    root.render(
-    <React.StrictMode>
-        <App />
-    </React.StrictMode>
-    );
-    cái này
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+this
 
-    root.render(
-        <App />
-    );
-    React StrictMode kết xuất các thành phần hai lần trên máy chủ dev
+root.render(
+    <App />
+);
+React StrictMode renders components twice on dev server
+
+# git
+1.  errors #git pull
+    fix
+    - git push --set-upstream origin master
+    - git pull

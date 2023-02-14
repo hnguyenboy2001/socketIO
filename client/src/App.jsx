@@ -6,9 +6,12 @@ import { io } from "socket.io-client";
 function App() {
   const socket = useRef();
   useEffect(()=>{
-    console.log("----------------")
     socket.current = io("ws://localhost:8900");
   },[])
+  
+  const handleCheckEmit = ()=>{
+    socket.current.emit("Client-CheckEmit","HelloWorld !");
+  }
   return (
     <div className="App">
       <header className="App-header">
@@ -24,6 +27,11 @@ function App() {
         >
           Learn React
         </a>
+        <button className='Check-emit' onClick={handleCheckEmit}>Emit to server</button>
+        {/* {socket.current.on("Server-checkEmit", (data)=>{
+          return ( <div><p className='Message'>{data}</p></div>)
+        })} */}
+       
       </header>
     </div>
   );
